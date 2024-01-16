@@ -1,0 +1,47 @@
+body{
+    background-color: black;
+    color: white;
+
+    
+}
+.semi-circle{
+    background-color: rgb(49, 47, 47);
+    opacity: 60%;
+    height: 80vh;
+    width: 80vh;
+    border-radius: 100%;
+    position: absolute;
+    top: -30%;
+    left: 10%;
+    
+}
+.ab-cont{
+    margin: 30px;
+    font-weight: bold;
+    position: fixed;
+
+}
+
+.ac-cont{
+    text-align: right;
+    margin: 20px 50px 0 0;
+}
+.sm-cont{
+    text-align: center;
+    margin: 20%;
+}
+.sm-cont h2{
+    font-size: 70px;
+}
+.sm-cont p{
+    padding-top: 4px;
+    font-size: 20px;
+}
+.sm-cont button{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
