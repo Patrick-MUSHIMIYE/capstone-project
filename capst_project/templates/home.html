@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>lost and found doc</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
   </head>
   <body>
     <div class="semi-circle">
@@ -18,8 +19,10 @@
     </div>
     <div class="sm-cont">
         <h2>LostFound</h2>
-        <p>LostFound platform helps users to restore and post the lost or misplaced Identification and<br> Professional document</p>
-        <button>Go to Home</button>
+        <p>LostFound platform helps users restore and post lost or misplaced Identification and<br> Professional documents</p>
+        <button>
+          <a href="{% url 'post' %}">Go to Home</a>
+        </button>
     </div>
   </body>
 </html>

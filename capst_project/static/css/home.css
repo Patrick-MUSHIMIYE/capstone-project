@@ -39,9 +39,12 @@ body{
 }
 .sm-cont button{
     background-color: blue;
-    color: white;
-    font-weight: bold;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+}
+.sm-cont button a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
 }

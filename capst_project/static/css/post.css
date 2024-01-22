@@ -1,0 +1,43 @@
+.post-cont{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}.sub-cont{
+    border-radius: 25px;
+    background-color: rgb(140, 142, 143);
+    width: 300px;
+    height: 450px;
+    padding: 0 10px 0 10px;
+    
+}
+.as-cont{
+    text-align: center;
+    
+}
+.p-form{
+    color: black;
+}
+.p-form small{
+    font-weight: bold;
+}
+.form-lbl{
+    margin-top: 5px;
+    margin-left: 12px;
+}
+.fm-lb{
+    margin-left: -12px;
+}
+.sbmt-form{
+    padding-top: 10px;
+}
+.btn1{
+    background-color: blue;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+

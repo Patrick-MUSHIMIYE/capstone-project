@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lost and found doc</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+  </head>
+  <body>
+    <div class="post-cont">
+      <div class="sub-cont">
+        <div class="as-cont">
+          <h2>Welcome</h2>
+          <h3>Post Found docs</h3>
+        </div>
+          <div class="p-form">
+            <small>Owners details</small>
+            <form method="post" action="{% url 'upload_image_view' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-lbl",>
+                <label>FirstName</label>
+                <div>
+                  <input type="text" class="form-control" id="id_subject" name="first_name" required>
+                </div>
+              </div>
+              <div class="form-lbl",>
+                <label>SecondName</label>
+                <div>
+                  <input type="text" class="form-control" id="id_subject" name="second_name" required>
+                </div>
+                <div Class="fm-lb">
+                  <small>Your details</small>
+                </div>
+                <div>
+                  <label>FullName</label>
+                </div>
+                <div>
+                  <input type="text" class="form-control" id="id_subject" name="name" required>
+                </div>
+                <div>
+                  <label>Location</label>
+                </div>
+                <div>
+                  <input type="text" class="form-control" id="id_subject" name="location" required> 
+                </div>
+                <div>
+                  <label>PhoneNumber</label>
+                </div>
+                <div>
+                  <input type="text" class="form-control" id="id_subject" name="tel" required>
+                </div>
+              </div>
+              <div class="sbmt-form">
+                <label for="img">Upload only image</label>
+                <input type="file" id="img" name="upload_images" accept="image/*" required>
+                <input type="submit" class="btn1" value="Upload">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

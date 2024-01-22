@@ -25,7 +25,10 @@ from lostfound_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path('^$', views.home)
+    re_path(r'^$', views.home),
+    re_path(r'^home/$', views.post, name='post'),
+    re_path(r'^uploaded/$', views.upload_image_view, name='upload_image_view'),
+    re_path(r'^board/$', views.board_images, name='board_images')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
