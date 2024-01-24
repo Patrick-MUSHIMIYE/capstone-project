@@ -5,27 +5,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>lost and found doc</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/board.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
 
   </head>
   <body>
+    <div class="semi-circle">
+    </div>
     <div class="logo-dec">
       <h1>LostFound</h1>
     </div>
     <nav class="navbar">
       <a href="{% url 'post' %}">Post</a>
     </nav>
-    <div class="sea-area">
-      <input type="text" class="form-control" placeholder="search">
-      <button type="submit">Search</button>
-    </div>
-    <div class="img-deco">
-      {% for doc in image_list %}
-          {% if doc.upload_images and doc.created_at %}
-            <img src="{{ doc.upload_images.url }}" alt="Image"> 
-          {% endif %}
-      {% endfor %}
+    <form method="post" action="{% url 'search_document' %}">
+      {% csrf_token %}
+      <div class="sea-area">
+        <div class="searc-control">
+          <input type="text" name="search_query" placeholder="Search">
+        </div>
+        <div class="se-btn">
+          <button type="submit" class="btn">Search</button>
+        </div>
+        
+      </div>
+    </form>
+    <div class="sear-ar">
+      {% if results %}
+      <div class="img-deco">
+        {% for name in results %}
+          {% if name.upload_images %}
+          <h1>Search Results for "{{ search_query }}"</h1>
+            <img src="{{ name.upload_images.url }}" alt="Image">
+            {% endif %}
+        {% endfor %}
+      </div>
+      {% elif results is None %}
+      <div class="img-deco">
+        {% for doc in image_list %}
+            {% if doc.upload_images %}
+              <img src="{{ doc.upload_images.url }}" alt="Image"> 
+            {% endif %}
+        {% endfor %}
+      </div>
+      {% else %}
+      <h1>No results found.</h1>
+      {% endif %}
     </div>
   </body>
 </html>

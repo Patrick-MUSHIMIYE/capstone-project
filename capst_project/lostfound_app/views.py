@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from .forms import UploadImageForm
 from lostfound_app.models import upload_image
+from django.db.models import Q
 
 
 def home(request):
@@ -30,7 +31,6 @@ def upload_image_view(request):
         )
         image_list = upload_image.objects.all()
         return render(request, 'board.html', {'image_list': image_list})
-        # return HttpResponse('Document successfully uploaded')
     return HttpResponse('No document was uploaded')
     # else:
     #     form = UploadImageForm()
@@ -39,3 +39,28 @@ def upload_image_view(request):
 def board_images(request):
     image_list = upload_image.objects.all()
     return render(request, 'board.html', {'image_list': image_list})
+
+def search_document(request):
+    if request.method == 'POST':
+        search_query = request.POST.get('search_query')
+        results = upload_image.objects.filter(
+            Q(first_name__icontains=search_query) | Q(second_name__icontains=search_query)
+        )
+
+        context = {'results': results, 'search_query': search_query}
+        return render(request, 'board.html', context)
+
+    # Handle GET requests or other cases
+    return render(request, 'board.html')
+
+    # if request.method == 'POST':
+    #     searchByFirstName = request.POST.get('first_name')
+    #     searchBySecondName = request.POST.get('second_name')
+    #     results = upload_image.objects.filter(first_name=searchByFirstName, second_name=searchBySecondName)
+    #     # Replace 'your_search_field' with the actual field you want to search on
+
+    #     context = {'results': results, 'search_query': searchByFirstName}
+    #     return render(request, 'board.html', context)
+
+    # # Handle GET requests or other cases
+    # return render(request, 'board.html')

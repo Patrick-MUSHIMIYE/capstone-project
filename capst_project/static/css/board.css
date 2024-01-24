@@ -7,20 +7,42 @@
     text-align: right;
     padding: 50px;
     font-size: 30px;
+    margin-right: 15vh;
 }
 .navbar a{
     position: fixed;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 40px;
+    margin-right: 20%;
+    color: blue;
+    
 }
 .sea-area{
     text-align: center;
+    margin-left: 110vh;
+
+}
+.searc-control{
+    position: fixed;
+}
+.se-btn{
+    margin-right: 30vh;
+}
+.se-btn button{
+    position: fixed;
+}
+.sear-ar{
+    padding: 40px;
+}
+.sear-ar h1{
+    text-align: center;
+    padding: 90px;
 }
 .img-deco{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    position: absolute;
     
 }
 .img-deco img{
