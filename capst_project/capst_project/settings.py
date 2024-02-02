@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     
     'admin_interface',
     'colorfield',
-    
     'lostfound_app',
+    'fontawesomefree'
+    
 ]
 
 MIDDLEWARE = [

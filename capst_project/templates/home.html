@@ -14,8 +14,42 @@
     <div class="ab-cont">
         <h1>LostFound</h1>
     </div>
+    <!-- <div class="abb-c">
+      <img id="lamp" src="{% static 'images/bulb2.jpeg'  %}" alt="light bulb">
+    </div> -->
     <div class="ac-cont">
-        <h3>Will drop The Inspirational Quotes here</h3>
+      <div id="quote-container">
+        <h3 id="quote">Loading...</h3>
+      </div>
+      <script>
+        const quotes = [
+        "The kindness you put out into this world will have a way of coming back to you",
+        "Spread kindness around to those who need it.",
+        "You have not lived today until you have done something for someone who can never repay you.",
+        "Try to be a rainbow in someone's cloud",
+        "There is nothing more beautiful than someone who goes out of their way to make life beautiful for others.",
+        "Be the change you want to see in the world",
+        "You have to lift a person up before you can really put them in their place.",
+        "Wherever there is a human in need, there is an opportunity for kindness and to make a difference",
+        "Strive not to be a success, but rather to be of value.",
+        "The best way to find yourself is to lose yourself in the services of others"
+        ];
+
+        let currentQuoteIndex = 0;
+        const quoteElement = document.getElementById('quote');
+
+        function changeQuote() {
+            quoteElement.innerHTML = `"${quotes[currentQuoteIndex]}"`;
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        }
+
+        // Initial call
+        changeQuote();
+
+        // Set interval for changing quotes
+        setInterval(changeQuote, 10000); // 10000 milliseconds = 10 seconds
+    </script>
+    </div>
     </div>
     <div class="sm-cont">
         <h2>LostFound</h2>

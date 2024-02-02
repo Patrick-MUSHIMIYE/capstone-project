@@ -1,11 +1,11 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: #424B54;
     
 }
 .semi-circle{
-    background-color: rgb(49, 47, 47);
-    opacity: 60%;
+    background-color: #93A8AC;
+    opacity: 50%;
     height: 80vh;
     width: 80vh;
     border-radius: 100%;
@@ -18,20 +18,35 @@ body{
     margin: 30px;
     font-weight: bold;
     position: fixed;
+    top: -1%;
+    color: #124559;
 
 }
-
+/* .abb-c{
+    text-align: center;
+}
+.abb-c img{
+    position: fixed;
+    padding-right: 80vh;
+    top: -10px;
+} */
 .ac-cont{
     text-align: right;
-    margin: 20px 50px 0 0;
-    
+    position: fixed;
+    top: 2%;
+}
+.ac-cont h3{
+    font-weight: bold;
+    margin-left: 100vh;
 }
 .sm-cont{
     text-align: center;
     margin: 20%;
+    position: relative;
 }
 .sm-cont h2{
     font-size: 70px;
+    padding: 20px;
     
 }
 .sm-cont p{
@@ -39,13 +54,22 @@ body{
     font-size: 20px;
 }
 .sm-cont button{
-    background-color: blue;
+    background-color: green;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 3vh;
     cursor: pointer;
 }
 .sm-cont button a {
     color: white;
     font-weight: bold;
     text-decoration: none;
+}
+
+#quote-container {
+    margin: 50px;
+    position: relative;
+}
+#lamp {
+    width: 80vh;
+    transition: filter 1s ease-in-out;
 }

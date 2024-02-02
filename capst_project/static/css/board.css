@@ -2,6 +2,8 @@
     margin: 30px;
     font-weight: bold;
     position: fixed;
+    top: -1%;
+    color: #124559;
 }
 .navbar{
     text-align: right;
@@ -14,25 +16,38 @@
     text-decoration: none;
     font-weight: bold;
     margin-right: 20%;
-    color: blue;
+    color: #D64933;
     
 }
 .sea-area{
     text-align: center;
-    margin-left: 110vh;
+    margin-left: 103vh;
 
 }
 .searc-control{
     position: fixed;
+    
+}
+.searc-control input{
+    height: 4.7vh;
+    width: 50vh;
+    border-radius: 3vh;
+    border-style: solid;
+    border-color: black;
 }
 .se-btn{
-    margin-right: 30vh;
+    margin-right: 45vh;
 }
 .se-btn button{
     position: fixed;
+    height: 5vh;
+    margin-left: 13vh;
+    border-radius: 3vh;
+    border: none;
+    width: 5vh;
 }
 .sear-ar{
-    padding: 40px;
+    padding: 30px;
 }
 .sear-ar h1{
     text-align: center;
@@ -40,7 +55,7 @@
 }
 .img-deco{
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     position: absolute;
     
@@ -48,6 +63,6 @@
 .img-deco img{
     padding: 30px;
     height: 30%;
-    width: 30%;
+    width: 25%;
     
 }

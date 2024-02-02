@@ -19,7 +19,6 @@
 }
 .as-cont{
     text-align: center;
-    
 }
 .p-form{
     color: black;
@@ -38,11 +37,14 @@
     padding-top: 10px;
 }
 .btn1{
-    background-color: blue;
-    padding: 10px;
-    border-radius: 10px;
+    background-color: green;
+    border-radius: 3vh;
     cursor: pointer;
-    color: white;
+    color: black;
     font-weight: bold;
+    margin-top: 10px;
+    height: 30px;
+    width: 25vh;
+    margin-left: 25px;
+    
 }
-
