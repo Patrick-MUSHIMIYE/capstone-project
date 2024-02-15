@@ -7,14 +7,18 @@
     <title>lost and found doc</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image" href="{% static 'images/logo.png' %}"
   </head>
   <body>
     <div class="semi-circle">
     </div>
-    <div class="ab-cont">
-      <h1>LostFound</h1>
-  </div>
+    <div class="lin-con">
+      <h1>
+        <a href="{% url 'home' %}">LostFound</a>
+      </h1>
+    </div>
     <div class="post-cont">
       <div class="sub-cont">
         <div class="as-cont">

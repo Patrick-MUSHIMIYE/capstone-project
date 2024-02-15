@@ -6,17 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>lost and found doc</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="icon" type="image" href="{% static 'images/logo.png' %}">
 
   </head>
   <body>
-    <div class="semi-circle">
-    </div>
     <div class="ab-cont">
-        <h1>LostFound</h1>
+      <img src="{% static 'images/logo-removebg-preview.png' %}" alt="logo">
     </div>
-    <!-- <div class="abb-c">
-      <img id="lamp" src="{% static 'images/bulb2.jpeg'  %}" alt="light bulb">
-    </div> -->
     <div class="ac-cont">
       <div id="quote-container">
         <h3 id="quote">Loading...</h3>
@@ -48,15 +44,23 @@
 
         // Set interval for changing quotes
         setInterval(changeQuote, 10000); // 10000 milliseconds = 10 seconds
-    </script>
+      </script>
     </div>
+    <div class="ad-cont">
+      <div class="sm-container">
+        <h2>LostFound</h2>
+        <div class="sma-container">
+          <p>LostFound platform helps users restore and post lost or misplaced Identification and Professional documents such as Id, drivers license, diploma, and student card...</p>
+        </div>
+      </div>
+      <div class="im-container">
+        <img src="{% static 'images/Rwanda_ID_4ea79bff5c.png' %}" alt="id-image">
+      </div>
     </div>
     <div class="sm-cont">
-        <h2>LostFound</h2>
-        <p>LostFound platform helps users restore and post lost or misplaced Identification and<br> Professional documents</p>
-        <button>
-          <a href="{% url 'board_images' %}">Go to Home</a>
-        </button>
+      <button>
+        <a href="{% url 'board_images' %}">Go to Home</a>
+      </button>
     </div>
   </body>
 </html>

@@ -1,3 +1,16 @@
+.lin-con{
+    margin: 30px;
+    font-weight: bold;
+    color: #124559;
+    margin-top: 7.1vh;
+    
+}
+.lin-con a {
+    text-decoration: none;
+    position: fixed;
+    
+  
+}
 .post-cont{
     align-items: center;
     justify-content: center;
@@ -46,5 +59,4 @@
     height: 30px;
     width: 25vh;
     margin-left: 25px;
-    
 }

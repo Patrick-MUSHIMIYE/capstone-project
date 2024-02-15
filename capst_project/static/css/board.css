@@ -1,27 +1,30 @@
-.logo-dec{
-    margin: 30px;
-    font-weight: bold;
-    position: fixed;
-    top: -1%;
-    color: #124559;
-}
 .navbar{
     text-align: right;
     padding: 50px;
     font-size: 30px;
-    margin-right: 15vh;
+    margin-right: 10vh;
+  
+}
+.navbar button{
+    background-color: #087CA7;
+    border-radius: 3vh;
+    height: 30px;
+    width: 10%;
+    border: none;
+    text-align: center;
+    margin-left: 10mm;
+
 }
 .navbar a{
     position: fixed;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 20%;
-    color: #D64933;
-    
+    color: white;
+    top: 65px;
 }
 .sea-area{
     text-align: center;
-    margin-left: 103vh;
+    margin: 8% 0% 0% 35%;
 
 }
 .searc-control{
@@ -30,18 +33,19 @@
 }
 .searc-control input{
     height: 4.7vh;
-    width: 50vh;
+    width: 61vh;
     border-radius: 3vh;
     border-style: solid;
     border-color: black;
 }
 .se-btn{
     margin-right: 45vh;
+    padding-top: 2px;
 }
 .se-btn button{
     position: fixed;
     height: 5vh;
-    margin-left: 13vh;
+    margin-left: 9vh;
     border-radius: 3vh;
     border: none;
     width: 5vh;
@@ -57,7 +61,7 @@
     display:flex;
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
-    position: absolute;
+    padding: 30px;
     
 }
 .img-deco img{

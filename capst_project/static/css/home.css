@@ -1,63 +1,73 @@
 body{
-    background-color: white;
+    background-color: #FFFFFF;
     color: #424B54;
-    
-}
-.semi-circle{
-    background-color: #93A8AC;
-    opacity: 50%;
-    height: 80vh;
-    width: 80vh;
-    border-radius: 100%;
-    position: fixed;
-    top: -30%;
-    left: 10%;
+    margin: 0;
+    padding: 0;
     
 }
 .ab-cont{
-    margin: 30px;
-    font-weight: bold;
+    background-color: #0F0D64;
+    width: 100%;
+    height: 21vh;
     position: fixed;
     top: -1%;
-    color: #124559;
-
-}
-/* .abb-c{
-    text-align: center;
-}
-.abb-c img{
-    position: fixed;
-    padding-right: 80vh;
-    top: -10px;
-} */
-.ac-cont{
-    text-align: right;
-    position: fixed;
-    top: 2%;
-}
-.ac-cont h3{
-    font-weight: bold;
-    margin-left: 100vh;
-}
-.sm-cont{
-    text-align: center;
-    margin: 20%;
-    position: relative;
-}
-.sm-cont h2{
-    font-size: 70px;
-    padding: 20px;
     
 }
-.sm-cont p{
-    padding-top: 4px;
-    font-size: 20px;
+
+.ab-cont img{
+    height: 20vh;
+    padding: 5px;
+    position: fixed;
+    
 }
+.ac-cont{
+    text-align: center;
+    color: white;
+    
+}
+.ad-cont{
+    background-color: #DAB785;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+}
+.sm-container{
+    color: black;
+}
+.sm-container h2{
+    font-size: 50px;
+    margin-left: 30%;
+}
+.sma-container{
+    background-color: white;
+    border-radius: 10px;
+    height: 20vh;
+    width: 70vh;
+    padding: 20px;
+    margin-left: 50px;
+    font-size: 18px;
+}
+.im-container{
+    margin: 0;
+    padding: 0;
+}
+.im-container img{
+    height: 70vh;
+    width: 100%;
+    margin-left: 17.3%;
+}
+
+.sm-cont{
+    text-align: center;
+    margin-top: 25px;
+}
+
 .sm-cont button{
-    background-color: green;
+    background-color: #04395E;
     padding: 10px;
     border-radius: 3vh;
     cursor: pointer;
+    width: 25%;
 }
 .sm-cont button a {
     color: white;
@@ -72,4 +82,4 @@ body{
 #lamp {
     width: 80vh;
     transition: filter 1s ease-in-out;
-}
+} 

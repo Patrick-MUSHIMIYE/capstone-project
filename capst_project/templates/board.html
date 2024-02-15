@@ -7,19 +7,58 @@
     <title>lost and found doc</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}">
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
-
+    <link rel="icon" type="image" href="{% static 'images/logo.png' %}">
 
   </head>
   <body>
-    <div class="semi-circle">
+    <div class="ab-cont">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo-removebg-preview.png' %}" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <button>
+          <a href="{% url 'post' %}">Post</a>
+        </button>
+      </nav>
+
     </div>
-    <div class="logo-dec">
-      <h1>LostFound</h1>
-    </div>
-    <nav class="navbar">
-      <a href="{% url 'post' %}">Post</a>
-    </nav>
+    <!-- <div class="ac-cont">
+      <div id="quote-container">
+        <h3 id="quote">Loading...</h3>
+      </div>
+      <script>
+        const quotes = [
+        "The kindness you put out into this world will have a way of coming back to you",
+        "Spread kindness around to those who need it.",
+        "You have not lived today until you have done something for someone who can never repay you.",
+        "Try to be a rainbow in someone's cloud",
+        "There is nothing more beautiful than someone who goes out of their way to make life beautiful for others.",
+        "Be the change you want to see in the world",
+        "You have to lift a person up before you can really put them in their place.",
+        "Wherever there is a human in need, there is an opportunity for kindness and to make a difference",
+        "Strive not to be a success, but rather to be of value.",
+        "The best way to find yourself is to lose yourself in the services of others"
+        ];
+
+        let currentQuoteIndex = 0;
+        const quoteElement = document.getElementById('quote');
+
+        function changeQuote() {
+            quoteElement.innerHTML = `"${quotes[currentQuoteIndex]}"`;
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+        }
+
+        // Initial call
+        changeQuote();
+
+        // Set interval for changing quotes
+        setInterval(changeQuote, 10000); // 10000 milliseconds = 10 seconds
+      </script>
+    </div> -->
+    
     <form method="post" action="{% url 'search_document' %}">
       {% csrf_token %}
       <div class="sea-area">
