@@ -16,12 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path
-
 from django.conf import settings
 from django.conf.urls.static import static
-
-
 from lostfound_app import views
+from accounts import views as accounts_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +28,10 @@ urlpatterns = [
     re_path(r'^home/$', views.post, name='post'),
     re_path(r'^uploaded/$', views.upload_image_view, name='upload_image_view'),
     re_path(r'^board/$', views.board_images, name='board_images'),
-    re_path(r'^board/search/$', views.search_document, name='search_document')
+    re_path(r'^board/search/$', views.search_document, name='search_document'),
+    re_path(r'^signup/$', accounts_views.signup, name='signup'),
+    re_path(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

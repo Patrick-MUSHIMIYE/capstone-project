@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lost and found doc</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+  </head>
+  <body>
+    <div class="sign-cont">
+      <div class="contain">
+        <h2>Sign Up</h2>
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            {% if form.errors %}
+              <div class="alrt" id="form-errors">
+                <strong>Error:</strong>
+                {% for field, error_list in form.errors.items %}
+                  {% for error in error_list %}
+                    <p>{% if field %}{{ field }}: {% endif %}{{ error }}</p>
+                  {% endfor %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% csrf_token %}
+          <div class='sty-flda'>
+           {{ form.first_name }}
+          </div>
+          <div class='sty-fldb'>
+            {{ form.second_name }}
+          </div>
+          <div class='sty-fldc'>
+            {{ form.username }}
+          </div>
+          <div class='sty-fldd'>
+            {{ form.email }}
+          </div>
+          <div class='sty-flde'>
+            {{ form.password1 }}
+          </div>
+          <div class='sty-fldf'>
+            {{ form.password2 }}
+          </div> 
+          <button type="submit" onclick="showAlerts()">Create account</button>
+        </form>
+        <div class="sm-co">
+          <small>Already have an account? <a href="{% url 'login' %}">Log in</a></small>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.onload = function() {
+        var i
+        var errorsContainer = document.getElementById("form-errors");
+        if (errorsContainer.innerText.trim().length > 0) {
+            var errors = errorsContainer.getElementsByTagName("p");
+            for (i = 0; i < errors.length; i++) {
+                alert(errors[i].innerText);
+            }
+        }
+    };
+  </script>
+  </body>
+</html>
