@@ -24,39 +24,6 @@
       </nav>
 
     </div>
-    <!-- <div class="ac-cont">
-      <div id="quote-container">
-        <h3 id="quote">Loading...</h3>
-      </div>
-      <script>
-        const quotes = [
-        "The kindness you put out into this world will have a way of coming back to you",
-        "Spread kindness around to those who need it.",
-        "You have not lived today until you have done something for someone who can never repay you.",
-        "Try to be a rainbow in someone's cloud",
-        "There is nothing more beautiful than someone who goes out of their way to make life beautiful for others.",
-        "Be the change you want to see in the world",
-        "You have to lift a person up before you can really put them in their place.",
-        "Wherever there is a human in need, there is an opportunity for kindness and to make a difference",
-        "Strive not to be a success, but rather to be of value.",
-        "The best way to find yourself is to lose yourself in the services of others"
-        ];
-
-        let currentQuoteIndex = 0;
-        const quoteElement = document.getElementById('quote');
-
-        function changeQuote() {
-            quoteElement.innerHTML = `"${quotes[currentQuoteIndex]}"`;
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        }
-
-        // Initial call
-        changeQuote();
-
-        // Set interval for changing quotes
-        setInterval(changeQuote, 10000); // 10000 milliseconds = 10 seconds
-      </script>
-    </div> -->
     
     <form method="post" action="{% url 'search_document' %}">
       {% csrf_token %}
@@ -76,7 +43,9 @@
         {% for name in results %}
           {% if name.upload_images %}
           <h1>Search Results for "{{ search_query }}"</h1>
+          <a href="{% url 'image_details' id=name.pk %}">
             <img src="{{ name.upload_images.url }}" alt="Image">
+          </a>
             {% endif %}
         {% endfor %}
       </div>
@@ -89,8 +58,9 @@
         {% endfor %}
       </div>
       {% else %}
-      <h1>No results found.</h1>
+      <h1>No results found</h1>
       {% endif %}
+    </div>
     </div>
   </body>
 </html>

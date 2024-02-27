@@ -65,6 +65,9 @@ button {
 .sm-co{
     padding: 10px;
 }
+a {
+    text-decoration: none;
+}
 .alrt{
     display: none;
 }

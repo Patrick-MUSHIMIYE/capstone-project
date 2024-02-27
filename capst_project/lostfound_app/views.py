@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse,  get_object_or_404
 from .forms import UploadImageForm
 from lostfound_app.models import upload_image
 from django.db.models import Q
@@ -32,9 +32,7 @@ def upload_image_view(request):
         image_list = upload_image.objects.all()
         return render(request, 'board.html', {'image_list': image_list})
     return HttpResponse('No document was uploaded')
-    # else:
-    #     form = UploadImageForm()
-    # return render(request, 'post.html', {'form': form})
+   
 
 def board_images(request):
     image_list = upload_image.objects.all()
@@ -53,14 +51,7 @@ def search_document(request):
     # Handle GET requests or other cases
     return render(request, 'board.html')
 
-    # if request.method == 'POST':
-    #     searchByFirstName = request.POST.get('first_name')
-    #     searchBySecondName = request.POST.get('second_name')
-    #     results = upload_image.objects.filter(first_name=searchByFirstName, second_name=searchBySecondName)
-    #     # Replace 'your_search_field' with the actual field you want to search on
-
-    #     context = {'results': results, 'search_query': searchByFirstName}
-    #     return render(request, 'board.html', context)
-
-    # # Handle GET requests or other cases
-    # return render(request, 'board.html')
+def image_details(request, id):
+    image = get_object_or_404(upload_image, pk=id)
+    return render(request, 'claim.html', {'image': image})
+    

@@ -31,7 +31,8 @@ urlpatterns = [
     re_path(r'^board/search/$', views.search_document, name='search_document'),
     re_path(r'^signup/$', accounts_views.signup, name='signup'),
     re_path(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-
+    # re_path(r'^claim/$', views.image_details, name='image_details'),
+    path('image_details/<int:id>/', views.image_details, name='image_details')
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
