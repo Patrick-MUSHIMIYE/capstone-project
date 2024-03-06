@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse,  get_object_or_404
 from .forms import UploadImageForm
 from lostfound_app.models import upload_image
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 
 
 def home(request):
@@ -9,7 +10,6 @@ def home(request):
 
 def post(request):
     return render(request, 'post.html')
-
 
 
 def upload_image_view(request):
@@ -51,6 +51,7 @@ def search_document(request):
     # Handle GET requests or other cases
     return render(request, 'board.html')
 
+@login_required
 def image_details(request, id):
     image = get_object_or_404(upload_image, pk=id)
     return render(request, 'claim.html', {'image': image})

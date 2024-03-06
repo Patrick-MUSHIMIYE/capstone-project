@@ -46,6 +46,7 @@
           <a href="{% url 'image_details' id=name.pk %}">
             <img src="{{ name.upload_images.url }}" alt="Image">
           </a>
+        </div>
             {% endif %}
         {% endfor %}
       </div>
@@ -53,7 +54,9 @@
       <div class="img-deco">
         {% for doc in image_list %}
             {% if doc.upload_images %}
-              <img src="{{ doc.upload_images.url }}" alt="Image"> 
+            <a href="{% url 'image_details' id=doc.pk %}">
+              <img src="{{ doc.upload_images.url }}" alt="Image">
+            </a>
             {% endif %}
         {% endfor %}
       </div>

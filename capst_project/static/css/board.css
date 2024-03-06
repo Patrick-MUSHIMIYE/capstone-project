@@ -66,11 +66,28 @@ body{
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     padding: 30px;
-    
 }
-.img-deco img{
+.img-deco a{
     padding: 30px;
     height: 30%;
     width: 25%;
+}
+
+/* .img-deco img:hover {
+    transform: rotateY(180deg);
+  }
+
+.flip-box-back{
+    padding: 30px;
+    height: 30%;
+    width: 25%;
+    background-color: yellow; 
+    text-align: center;
     
 }
+.flip-box-back ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+} */

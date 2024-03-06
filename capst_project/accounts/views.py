@@ -29,7 +29,7 @@ def signup(request):
             user = form.save()
             auth_login(request, user)
             messages.success(request, 'Account created successfully')
-            return redirect('home')
+            return redirect('claim')
     else:  
         form = CustomUserCreationForm()  
     context = {'form':form}  
