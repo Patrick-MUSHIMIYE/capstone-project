@@ -62,15 +62,27 @@ body{
     padding: 90px;
 }
 .img-deco{
-    display:flex;
-    flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
-    padding: 30px;
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap-reverse; /* Allow items to wrap to the next line */
+    justify-content: center;
+    
 }
 .img-deco a{
-    padding: 30px;
-    height: 30%;
-    width: 25%;
+    text-decoration: none;
+
+    flex: 0 0 33%; /* Each item takes up one-third of the container */
+    max-width: 33%; /* Each item takes up one-third of the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 10px; /* Adjust as needed */
+/
+}
+.img-deco img{
+    
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    height: auto; /* Maintain aspect ratio */
+    
+    
 }
 
 /* .img-deco img:hover {

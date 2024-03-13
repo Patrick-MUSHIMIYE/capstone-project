@@ -34,22 +34,35 @@
         <div class="se-btn">
           <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        
       </div>
+      
     </form>
     <div class="sear-ar">
       {% if results %}
+
+      <div class="search-results-container">
+        <h1>Search Results for "{{ search_query }}"</h1>
+        <div class="img-deco">
+          {% for name in results %}
+            {% if name.upload_images %}
+              <a href="{% url 'image_details' id=name.pk %}">
+                <img src="{{ name.upload_images.url }}" alt="Image">
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      <!-- <h1>Search Results for "{{ search_query }}"</h1>
       <div class="img-deco">
         {% for name in results %}
           {% if name.upload_images %}
-          <h1>Search Results for "{{ search_query }}"</h1>
           <a href="{% url 'image_details' id=name.pk %}">
             <img src="{{ name.upload_images.url }}" alt="Image">
           </a>
         </div>
             {% endif %}
         {% endfor %}
-      </div>
+      </div> -->
       {% elif results is None %}
       <div class="img-deco">
         {% for doc in image_list %}

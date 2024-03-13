@@ -6,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>lost and found doc</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/claim.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
   </head>
   <body>
+    <div class="ab-cont">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo-removebg-preview.png' %}" alt="logo">
+      </a>
+
+      <nav class="navbar">
+        <button>
+          <a href="{% url 'logout' %}">Logout</a>
+        </button>
+      </nav>
+
+    </div>
       <div class="claim-cont">
         <div class="claim-contain">
           <h2>Collector Details</h2>

@@ -15,10 +15,12 @@
         <form method="post" novalidate>
             {% csrf_token %}
           <div class='sty-fldc'>
-            {{ form.username }}
+            <!-- {{ form.username}} -->
+            <input type="text" name="username" placeholder="Username">
           </div>
           <div class='sty-fldd'>
-            {{ form.password }}
+            <!-- {{ form.password }} -->
+            <input type="password" name="password" placeholder="Password">
           </div>
           <button type="submit">Log in</button>
         </form>
