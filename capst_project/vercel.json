@@ -2,15 +2,15 @@
     "version": 2,
     "builds": [
       {
-        "src": "capst_project/wsgi.py",
+        "src": "CapstoneProject/capst_project/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
       {
-        "src": "build_files.sh",
+        "src": "CapstoneProject/capst_project/build_files.sh",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "staticfiles_build"
+          "distDir": "CapstoneProject/capst_project/staticfiles_build"
         }
       }
     ],
@@ -21,7 +21,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "capst_project/wsgi.py"
+        "dest": "CapstoneProject/capst_project/wsgi.py"
       }
     ]
   }
