@@ -14,7 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
   
     def username_clean(self):  
         username = self.cleaned_data['username'].lower()
-        new = User.objects.filter(username = username)  
+        new = User.objects.filter(username = username)
         if new.count():
             raise ValidationError(" User Already Exist")  
         return username  
