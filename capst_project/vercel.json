@@ -10,7 +10,7 @@
         "src": "CapstoneProject/capst_project/build_files.sh",
         "use": "@vercel/static-build",
         "config": {
-          "distDir": "CapstoneProject/capst_project/staticfiles_build"
+          "distDir": "staticfiles_build"
         }
       }
     ],
