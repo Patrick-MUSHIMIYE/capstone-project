@@ -5,6 +5,7 @@ body {
     background-color: #D9D9D9;
     margin: 0;
     
+    
 }
 
 .sign-cont {
@@ -14,6 +15,7 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    font-family: 'Times New Roman';
 }
 
 .contain {
@@ -51,6 +53,9 @@ input {
     background-color: #D9D9D9;
     text-align: center;
 }
+input::placeholder{
+    font-family: 'Times New Roman';
+}
 
 button {
     background-color: #1f3667;
@@ -63,11 +68,14 @@ button {
     margin: -5px 0 0vh 18vh;
 }
 .sm-co{
-    padding: 10px;
+    padding: 3px;
 }
+
 a {
+    font-weight: bold;
     text-decoration: none;
 }
+
 .alrt{
     display: none;
 }
