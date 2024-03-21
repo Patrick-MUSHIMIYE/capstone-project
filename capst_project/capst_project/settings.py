@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import pytesseract
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -149,3 +150,8 @@ LOGOUT_REDIRECT_URL = 'login'
 # working on email for password reset or changes
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+
+
+# Set Tesseract path
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR'

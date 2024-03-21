@@ -49,7 +49,7 @@ urlpatterns = [
     #         auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'),
     #         name='password_reset_confirm'),
     
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     re_path(r'^reset/complete/$', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),
             name='password_reset_complete'),
     
@@ -57,6 +57,8 @@ urlpatterns = [
     name='password_change'),
     re_path(r'^settings/password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
     name='password_change_done'),
+    
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

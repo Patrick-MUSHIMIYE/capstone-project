@@ -17,10 +17,16 @@
           <div class='sty-fldc'>
             <!-- {{ form.username}} -->
             <input type="text" name="username" placeholder="Username">
+            {% for error in form.username.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
           </div>
           <div class='sty-fldd'>
             <!-- {{ form.password }} -->
             <input type="password" name="password" placeholder="Password">
+            {% for error in form.password.errors %}
+            <div class="error">{{ error }}</div>
+            {% endfor %}
           </div>
           <button type="submit">Log in</button>
         </form>
@@ -33,6 +39,6 @@
           </p>
         </div>
       </div>
-    </div> 
+    </div>
   </body>
 </html>

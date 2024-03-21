@@ -4,6 +4,10 @@ from lostfound_app.models import upload_image
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
+# detect images
+from .utils import is_nude
+from PIL import Image
+
 
 def home(request):
     return render(request, 'home.html')
@@ -21,6 +25,15 @@ def upload_image_view(request):
         tel = request.POST.get('tel')
         image_upload = request.FILES.get('upload_images')
         
+        
+        # Save the uploaded image temporarily
+        with open('temp_image.jpg', 'wb') as f:
+            f.write(image_upload.read())
+
+        # Check if the uploaded image is nude
+        if is_nude('temp_image.jpg'):
+            return HttpResponse('<script>alert("Image contains nudity and cannot be uploaded."); window.history.back();</script>')
+        
         upload_image.objects.create(
             first_name=first_name,
             second_name=second_name,
@@ -29,11 +42,13 @@ def upload_image_view(request):
             tel=tel,
             upload_images=image_upload
         )
+        # Retrieve all images from the database
         image_list = upload_image.objects.all()
         return render(request, 'board.html', {'image_list': image_list})
-    return HttpResponse('No document was uploaded')
-   
+    else:
+        return HttpResponse('No document was detected! Please upload a different image.')
 
+   
 def board_images(request):
     image_list = upload_image.objects.all()
     return render(request, 'board.html', {'image_list': image_list})
