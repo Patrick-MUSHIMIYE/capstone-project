@@ -148,10 +148,15 @@ LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
 
 # working on email for password reset or changes
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
-
+# Django email settings for Mailtrap
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'fa7b8c8c584b7c'
+EMAIL_HOST_PASSWORD = '74e306d47e2898'
+EMAIL_PORT = '2525'
+DEFAULT_FROM_EMAIL = "techteam@lostfound.com"
 
 # Set Tesseract path
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR'

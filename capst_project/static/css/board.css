@@ -41,6 +41,7 @@ body{
     border-radius: 3vh;
     border-style: solid;
     border-color: black;
+    
 }
 .se-btn{
     margin-left: 57vh;
@@ -87,21 +88,61 @@ body{
     
 }
 
-/* .img-deco img:hover {
-    transform: rotateY(180deg);
-  }
+@media screen and (max-width: 768px) {
+    /* Adjustments for search area */
+    .sea-area {
+      margin: 20% auto; /* Center the search area */
+      text-align: center; /* Center the text input and button */
+      max-width: 80%; /* Limit the width of the search area */
+    }
+  
+    /* Make logo smaller */
+    .ab-cont img {
+      height: 10vh; /* Adjust logo height for smaller screens */
+    }
+  
+    /* Align post button straight to logo */
+    .navbar {
+      margin: 2px;
+      padding: 20px
+    }
+  
+    .navbar button {
+      margin-left: 50%; /* Adjust the distance between logo and button */
+      font-size: 20px; /* Adjust font size for smaller screens */
+      width: 30%;
+    }
+  
+    .searc-control {
+      display: flex; /* Use flexbox to align icon and input */
+      align-items: center; /* Vertically center icon and input */
+      justify-content: center; /* Horizontally center icon and input */
+    }
+  
+    /* Adjust size of input and position of search icon */
+    .searc-control input {
+      width: 90%; /* Adjust input width for smaller screens */
+      max-width: calc(100% - 50px); /* Set max-width for input */
+      margin-left: 40px; /* Add margin to the right of the input */
+    }
 
-.flip-box-back{
-    padding: 30px;
-    height: 30%;
-    width: 25%;
-    background-color: yellow; 
-    text-align: center;
+     /* Re-add the search icon */
+     .se-btn {
+        margin-left: 48%; /* Adjust position of search icon */
+        padding-top: 2px;
+    }
+     /* Adjustments for image display */
+     .img-deco {
+        margin: 20px auto; /* Center the image container */
+        display: flex;
+        flex-wrap: wrap-reverse; /* Allow items to wrap to the next line */
+        justify-content: space-around; /* Distribute items evenly */
+      }
     
-}
-.flip-box-back ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-} */
+      .img-deco a {
+        flex: 0 0 calc(33% - 20px); /* Each item takes up one-third of the container with some spacing */
+        max-width: calc(33% - 20px); /* Each item takes up one-third of the container with some spacing */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin: 10px; /* Add spacing between images */
+      }
+    }

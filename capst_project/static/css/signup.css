@@ -79,3 +79,21 @@ a {
 .alrt{
     display: none;
 }
+/* signup.css */
+
+/* Existing styles remain unchanged */
+
+@media screen and (max-width: 768px) {
+    .contain {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+    
+    input {
+      width: 100%; /* Make inputs full width on smaller screens */
+    }
+  
+    button {
+      margin: 0 auto; /* Center the button */
+    }
+  }
+  

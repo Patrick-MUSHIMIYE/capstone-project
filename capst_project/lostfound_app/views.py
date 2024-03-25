@@ -4,6 +4,9 @@ from lostfound_app.models import upload_image
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
+
 # detect images
 from .utils import is_nude
 from PIL import Image
@@ -70,4 +73,18 @@ def search_document(request):
 def image_details(request, id):
     image = get_object_or_404(upload_image, pk=id)
     return render(request, 'claim.html', {'image': image})
-    
+
+
+def send_password_reset_email(user_email, protocol, domain, uid, token):
+    email_template = 'password_reset_email.html'
+    context = {
+        'email': user_email,
+        'protocol': protocol,
+        'domain': domain,
+        'uid': uid,
+        'token': token,
+    }
+    subject = "Password Request Reset"
+    message = render_to_string(email_template, context)
+    sender = "techteam@lostfound.com"
+    send_mail(subject, message, sender,[user_email], fail_silently=False,)

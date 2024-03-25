@@ -123,3 +123,46 @@ body{
     height: 30px;
     width: 25vh;
 }
+/* Add this CSS to your existing styles */
+
+/* For screens smaller than 768px */
+@media only screen and (max-width: 768px) {
+    .post-cont {
+      flex-direction: column;
+      height: auto;
+      position: static;
+    }
+    
+    .cont-a, .cnt-d {
+      width: 100%;
+      height: auto;
+      transform: none;
+      margin: 0;
+    }
+    
+    .cont-b {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .post-cont2 {
+      width: 100%;
+    }
+    
+    .sub-cont {
+      height: auto;
+      margin: 0;
+      padding: 10px;
+    }
+    
+    .p-form {
+      margin: 0;
+      padding: 0 10px;
+    }
+    
+    .form-lbl input {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  
