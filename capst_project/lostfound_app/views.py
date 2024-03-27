@@ -88,3 +88,43 @@ def send_password_reset_email(user_email, protocol, domain, uid, token):
     message = render_to_string(email_template, context)
     sender = "techteam@lostfound.com"
     send_mail(subject, message, sender,[user_email], fail_silently=False,)
+    
+    
+@login_required
+def delete_image(request, id):
+    image = get_object_or_404(upload_image, pk=id)  # Retrieve the image object from the database
+    current_user = request.user
+    if current_user.first_name in image.name or current_user.last_name in image.name:
+        image.delete()
+        return HttpResponse('<script>alert("Image deleted successfully."); window.location.href = window.history.back();</script>')
+    else:
+        return HttpResponse('<script>alert("You are not authorized to delete this image."); window.location.href = window.history.back();</script>')
+            
+    
+@login_required
+def update_image(request, id):
+    # Retrieve the image object from the database
+    image = get_object_or_404(upload_image, pk=id)
+    current_user = request.user
+    
+    if current_user.first_name in image.name or current_user.last_name in image.name:
+        if request.method == 'POST':
+            form = UploadImageForm(request.POST, request.FILES, instance=image)
+            if form.is_valid():
+                # Check if the uploaded image is nude
+                if 'upload_images' in request.FILES:
+                    with open('temp_image.jpg', 'wb') as f:
+                        f.write(request.FILES['upload_images'].read())
+                    if is_nude('temp_image.jpg'):  
+                        return HttpResponse('<script>alert("Image contains nudity and cannot be uploaded."); window.history.back();</script>')
+                    else:
+                        form.save()
+                        return redirect('board_images')
+        else:
+            # If it's not a POST request, instantiate the form with the image data
+            form = UploadImageForm(instance=image)
+            
+        # Render the template with the form
+        return render(request, 'update.html', {'form': form, 'image': image})
+    else:
+        return HttpResponse('<script>alert("You are not authorized to update this image."); window.location.href = window.history.back();</script>')

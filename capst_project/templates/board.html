@@ -48,6 +48,15 @@
               <a href="{% url 'image_details' id=name.pk %}">
                 <img src="{{ name.upload_images.url }}" alt="Image">
               </a>
+
+              <form method="post" action="{% url 'delete_image' id=name.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-image delete-btn">Delete</button>
+              </form>
+              <form method="post" action="{% url 'update_image' id=name.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="update-btn">Update</button>
+              </form>
             {% endif %}
           {% endfor %}
         </div>
@@ -58,6 +67,16 @@
             <a href="{% url 'image_details' id=doc.pk %}">
               <img src="{{ doc.upload_images.url }}" alt="Image">
             </a>
+
+            <form method="post" action="{% url 'delete_image' id=doc.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="delete-btn-image">Delete</button>
+            </form>
+
+            <form method="post" action="{% url 'update_image' id=doc.pk %}">
+              {% csrf_token %}
+              <button type="submit" name="update" class="update-btn-image">Update</button>
+            </form>
             {% endif %}
         {% endfor %}
       </div>

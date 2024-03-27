@@ -12,9 +12,10 @@ class UploadImageForm(forms.ModelForm):
     class Meta:
         model = upload_image
         fields = ['first_name', 'second_name', 'name', 'location', 'tel', 'upload_images', 'created_at']
+        exclude = ['created_at']
         
     def clean_tel(self):
-        tel = self.cleaned_data['tel']
-        if not tel.isdigit():
-            raise forms.ValidationError("Please enter a valid integer for the tel field.")
+        tel = self.cleaned_data.get('tel')
+        if not str(tel).isdigit():
+            raise forms.ValidationError("Phone number must contain only digits.")
         return tel

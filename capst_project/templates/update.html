@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update Image</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/board.css' %}">
+  <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+<div class="post-cont">
+ <div class="cont-a">
+ </div>
+ <div class="cont-b">
+  <h2>Open doors for others</h2>
+  <p>Update Found documents here</p>
+  <small> We appreciate your kindness</small>
+ </div>
+ <div class="cnt-d">
+ </div>
+ 
+ <div class="post-cont2">
+  <div class="sub-cont">
+    <div class="as-cont">
+      <h2>Welcome</h2>
+      <h3>Update Found docs</h3>
+    </div>
+      <div class="p-form">
+        <small>Owners details</small>
+        <form method="post" action="{% url 'update_image' id=image.pk %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-lbl">
+            <div>
+              <input type="text" class="form-control" id="id_first_name"
+              placeholder="FirstName"
+              name="first_name" value="{{ image.first_name }}" required>
+            </div>
+          </div>
+          <div class="form-lbl">
+            <div>
+              <input type="text" class="form-control" id="id_second_name" 
+              placeholder="SecondName"
+              name="second_name" value="{{ image.second_name }}" required>
+            </div>
+          </div>
+          <div class="form-lbl">
+            <div Class="fm-lb">
+              <small>Your details</small>
+            </div>
+          </div>
+          <div class="form-lbl">
+            <div>
+              <input type="text" class="form-control" id="id_name" 
+              placeholder="FullName" name="name" value="{{ image.name }}" required>
+            </div>
+          </div>
+          <div class="form-lbl">
+            <div>
+              <input type="text" class="form-control" id="id_location" 
+              placeholder="Location"
+              name="location" value="{{ image.location }}" required> 
+            </div>
+          </div>
+          <div class="form-lbl">
+            <div>
+              <input type="text" class="form-control" id="id_tel" 
+              placeholder="PhoneNumber" name="tel" value="{{ image.tel }}" required>
+            </div>
+          <div class="sbmt-form">
+            <label for="img">Upload only image</label>
+              <input type="file" id="img" name="upload_images" accept="image/*" required>
+            </div>
+          <div class="upl-btn">
+            <input type="submit" class="btn1" value="Update">
+          </div>
+        </form>
+      </div>
+  </div>
+ </div>
+</div>
+</body>
+</html>
