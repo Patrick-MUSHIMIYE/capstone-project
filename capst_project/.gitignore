@@ -2,3 +2,4 @@ temp_image.jpg
 sent_emails/
 media/
 credentials.py
+tensorflow-intel==2.16.1

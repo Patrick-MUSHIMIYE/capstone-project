@@ -1,0 +1,99 @@
+/* signup.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D9D9D9;
+    margin: 0;
+    
+    
+}
+
+.sign-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman';
+}
+
+.contain {
+    background-color: #8C8E8F;
+    border-radius: 25px;
+    padding: 30px;
+    height: 80vh;
+    width: 60vh;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+.sty-flda,
+.sty-fldb,
+.sty-fldc,
+.sty-fldd,
+.sty-flde,
+.sty-fldf{
+    margin-bottom: 30px;
+}
+
+input {
+    width: 60vh;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #D9D9D9;
+    text-align: center;
+}
+input::placeholder{
+    font-family: 'Times New Roman';
+}
+
+button {
+    background-color: #1f3667;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3vh;
+    cursor: pointer;
+    width: 25vh;
+    margin: -5px 0 0vh 18vh;
+}
+.sm-co{
+    padding: 3px;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alrt{
+    display: none;
+}
+
+
+/* Existing styles remain unchanged */
+
+@media screen and (max-width: 768px) {
+    .contain {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+    
+    input {
+      width: 100%; /* Make inputs full width on smaller screens */
+    }
+  
+    button {
+      margin: 0 auto; /* Center the button */
+    }
+  }
+  

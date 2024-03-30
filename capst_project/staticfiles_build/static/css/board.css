@@ -1,0 +1,164 @@
+body{
+    background-color: #D9D9D9;
+    font-family: "Times New Roman", sans-serif;
+}
+
+
+.navbar{
+    text-align: right;
+    margin: 50px;
+    font-size: 30px;
+    width: 100% auto;
+}
+ .navbar button{
+    background-color: #D9D9D9;
+    border-radius: 3vh;
+    height: 30px;
+    width: 10%;
+    border: none;
+    text-align: center;
+
+}
+.navbar a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    top: 65px;
+    
+    
+} 
+
+.sea-area{
+    text-align: center;
+    margin: 8% 0% 0% 35%;
+}
+.searc-control{
+    position: fixed;
+}
+    
+.searc-control input{
+    height: 4.7vh;
+    width: 61vh;
+    border-radius: 3vh;
+    border-style: solid;
+    border-color: black;
+    
+}
+.se-btn{
+    margin-left: 57vh;
+    padding-top: 2px;
+    position: fixed; 
+    
+
+}
+.se-btn button{
+    height: 5vh;
+    border-radius: 3vh;
+    border: none;
+    width: 5vh;
+}
+.sear-ar{
+    padding: 30px;
+
+}
+.sear-ar h1{
+    text-align: center;
+    padding: 90px;
+}
+
+.img-deco{
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap-reverse; /* Allow items to wrap to the next line */
+  justify-content: center;
+  
+}
+.img-deco a{
+  text-decoration: none;
+
+  flex: 0 0 24%; /* Each item takes up one-third of the container */
+  max-width: 33%; /* Each item takes up one-third of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 10px; /* Adjust as needed */
+}
+.img-deco img{
+  
+  max-width: 100%; /* Ensure images don't exceed the width of their container */
+  height: auto; /* Maintain aspect ratio */
+  
+}
+.delete-btn-image{
+  background-color: #B9B8D3;
+  border-radius: 5px;
+  border:none;
+  cursor: pointer;
+}
+.update-btn-image{
+  background-color: #6DD6DA;
+  border-radius: 5px;
+  border:none;
+  cursor: pointer;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    /* Adjustments for search area */
+    .sea-area {
+      margin: 20% auto; /* Center the search area */
+      text-align: center; /* Center the text input and button */
+      max-width: 80%; /* Limit the width of the search area */
+    }
+  
+    /* Make logo smaller */
+    .ab-cont img {
+      height: 10vh; /* Adjust logo height for smaller screens */
+    }
+  
+    /* Align post button straight to logo */
+    .navbar {
+      margin: 2px;
+      padding: 20px
+    }
+  
+    .navbar button {
+      margin-left: 50%; /* Adjust the distance between logo and button */
+      font-size: 20px; /* Adjust font size for smaller screens */
+      width: 30%;
+    }
+  
+    .searc-control {
+      display: flex; /* Use flexbox to align icon and input */
+      align-items: center; /* Vertically center icon and input */
+      justify-content: center; /* Horizontally center icon and input */
+    }
+  
+    /* Adjust size of input and position of search icon */
+    .searc-control input {
+      width: 90%; /* Adjust input width for smaller screens */
+      max-width: calc(100% - 50px); /* Set max-width for input */
+      margin-left: 40px; /* Add margin to the right of the input */
+    }
+
+     /* Re-add the search icon */
+     .se-btn {
+        margin-left: 48%; /* Adjust position of search icon */
+        padding-top: 2px;
+    }
+     /* Adjustments for image display */
+     .img-deco {
+        margin: 20px auto; /* Center the image container */
+        display: flex;
+        flex-wrap: wrap-reverse; /* Allow items to wrap to the next line */
+        justify-content: space-around; /* Distribute items evenly */
+      }
+    
+      .img-deco a {
+        flex: 0 0 calc(33% - 20px); /* Each item takes up one-third of the container with some spacing */
+        max-width: calc(33% - 20px); /* Each item takes up one-third of the container with some spacing */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        margin: 10px; /* Add spacing between images */
+      }
+    }
