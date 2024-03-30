@@ -19,3 +19,4 @@ class UploadImageForm(forms.ModelForm):
         if not str(tel).isdigit():
             raise forms.ValidationError("Phone number must contain only digits.")
         return tel
+
