@@ -1,4 +1,4 @@
 temp_image.jpg
 sent_emails/
 media/
-credentials/
+credentials.py
