@@ -86,8 +86,8 @@ def send_password_reset_email(user_email, protocol, domain, uid, token):
     }
     subject = "Password Request Reset"
     message = render_to_string(email_template, context)
-    # sender = "p.mushimiy@alustudent.com"
-    send_mail(subject, message, [user_email], fail_silently=False,)
+    sender = "p.mushimiy@alustudent.com"
+    send_mail(subject, message, sender, [user_email], fail_silently=False,)
     
     
 @login_required
